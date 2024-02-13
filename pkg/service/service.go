@@ -17,6 +17,8 @@ type Product interface {
 }
 
 type Category interface {
+	CreateCategory(product models.Category) (int, error)
+	GetById(categoryId int) (models.Category, error)
 }
 
 type Order interface {
@@ -33,5 +35,6 @@ func NewService(repos *repository.Repository) *Service {
 	return &Service{
 		Authorization: NewAuthService(repos.Authorization),
 		Product:       NewProductService(repos.Product),
+		Category:      NewCategoryService(repos.Category),
 	}
 }

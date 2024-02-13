@@ -16,6 +16,8 @@ type Product interface {
 }
 
 type Category interface {
+	CreateCategory(product models.Category) (int, error)
+	GetById(categoryId int) (models.Category, error)
 }
 
 type Order interface {
@@ -32,5 +34,6 @@ func NewRepository(db *sqlx.DB) *Repository {
 	return &Repository{
 		Authorization: NewAuthPostgres(db),
 		Product:       NewProductPostgres(db),
+		Category:      NewCategoryPostgres(db),
 	}
 }

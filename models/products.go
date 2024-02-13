@@ -1,17 +1,17 @@
 package models
 
 type Product struct {
-	Id         int    `json:"-"`
-	Name       string `json:"name"`
-	Descripton string `json:"Descripton"`
-	Price      int    `json:"price"`
-	Quantity   int    `json:"quantity"`
-	Category   string `json:"category"`
-	Img        string `json:"img"`
+	Id          int    `json:"-"`
+	Name        string `json:"name"`
+	Description string `json:"description"`
+	Price       int    `json:"price"`
+	Quantity    int    `json:"quantity"`
+	CategoryId  int    `json:"categoryId"`
+	Img         string `json:"img"`
 }
 
 type Category struct {
-	Id         int    `json:"-"`
-	Name       string `json:"name"`
-	Descripton string `json:"Descripton"`
+	Id          int    `json:"-" db:"id"`
+	Name        string `json:"name" db:"name"`
+	Description string `json:"description" db:"description"`
 }

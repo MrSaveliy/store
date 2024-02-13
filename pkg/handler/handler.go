@@ -38,7 +38,7 @@ func (h *Handler) InitRoutes() *gin.Engine {
 	{
 		categorys.POST("/", h.createCategory)
 		categorys.GET("/", h.getCategories)
-		categorys.GET("/:id", h.getCategoryBuId)
+		categorys.GET("/:id", h.getCategoryById)
 		categorys.PUT("/:id", h.updateCategory)
 		categorys.DELETE("/:id", h.deleteCategory)
 	}
